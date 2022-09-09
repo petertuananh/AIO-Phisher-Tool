@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="dang nhap zalo, zalo web, dang nhap zalo web.">
+    <meta name="description"
+        content="Trang đăng nhập vào Zalo Web sử dụng chung tài khoản zalo trên mobile. Bạn cũng có thể đăng nhập bằng cách quét mã QR và dùng tài khoản facebook.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link id="favico" rel="icon" type="image/png" href="https://stc-zaloid.zdn.vn/zaloid/client/images/favicon.png">
+    <link href="./index_files/main-5.3.6.css" rel="stylesheet">
+    <title>Đăng nhập tài khoản Zalo</title>
+
+    <script type="text/javascript" async="" src="./index_files/recaptcha__vi.js.download" crossorigin="anonymous"
+        integrity="sha384-2wwG+eqKlUBC6jE28kFXnZz219OA36Q+G4mHQRvO5VY4cFqBjHTsPIwWp736Cyq5"></script>
+    <script async="" src="./index_files/za.js.download"></script>
+    <script async="" src="./index_files/analytics.js.download"></script>
+    <script>
+        var continueUrl = 'https%3A%2F%2Fchat%2Ezalo%2Eme%2F';
+        var apiDomain = 'https://id.zalo.me/account';
+        var isActiveReCaptcha = true;
+        window.whiteListPhone = ["299198001", "299198002", "299198003", "299198004", "299198005", "299198006", "299198007", "299198008", "299198009", "299198010", "299198011", "299198012", "299198013", "299198014", "299198015", "299198016", "299198017", "299198018", "299198019", "299198020", "84326723195", "0326723195", "326723195", "84332002165", "0332002165", "332002165", "84347054225", "0347054225", "347054225", "84349984691", "0349984691", "349984691", "84352039253", "0352039253", "352039253", "84357001429", "0357001429", "357001429", "84368800236", "0368800236", "368800236", "84368992917", "0368992917", "368992917", "84372066815", "0372066815", "372066815", "84374318761", "0374318761", "374318761", "84379181950", "0379181950", "379181950", "84522915496", "0522915496", "522915496", "84586788334", "0586788334", "586788334", "84587992611", "0587992611", "587992611", "84587992611", "0587992611", "587992611", "84703373821", "0703373821", "703373821", "84703373821", "0703373821", "703373821", "84765262376", "0765262376", "765262376", "84765659176", "0765659176", "765659176", "84768076782", "0768076782", "768076782", "84777051906", "0777051906", "777051906", "84777081906", "0777081906", "777081906", "84778001124", "0778001124", "778001124", "84788043414", "0788043414", "788043414", "84813547667", "0813547667", "813547667", "84813595516", "0813595516", "813595516", "84813630824", "0813630824", "813630824", "84814050032", "0814050032", "814050032", "84817050032", "0817050032", "817050032", "84823491151", "0823491151", "823491151", "84828174901", "0828174901", "828174901", "84838255693", "0838255693", "838255693", "84838255693", "0838255693", "838255693", "84843370699", "0843370699", "843370699", "84843370699", "0843370699", "843370699", "84852175812", "0852175812", "852175812", "84868439871", "0868439871", "868439871", "84886001170", "0886001170", "886001170", "84931455416", "0931455416", "931455416", "84931860350", "0931860350", "931860350", "84932390874", "0932390874", "932390874", "84932391274", "0932391274", "932391274", "84932580564", "0932580564", "932580564", "84932581342", "0932581342", "932581342", "84932659441", "0932659441", "932659441", "84934155345", "0934155345", "934155345", "84936316916", "0936316916", "936316916", "84961580705", "0961580705", "961580705", "84977766717", "0977766717", "977766717", "84996321156", "0996321156", "996321156", "93719800021", "93719800022", "93719800023", "93719800024", "93719800025", "93719800026", "93719800027", "93719800028", "93719800029", "93719800030", "93719800031", "93719800032", "93719800033", "93719800034", "93719800035", "93719800036", "93719800037", "93719800038", "93719800039", "93719800040", "93719800041", "93719800042", "93719800043", "93719800044", "93719800045", "93719800046", "93719800047", "93719800048", "93719800049", "93719800050", "93719800051", "93719800052", "93719800053", "93719800054", "93719800055", "93719800056", "93719800057", "93719800058", "93719800059", "93719800060", "93719800061", "93719800062", "93719800063", "93719800064", "93719800065", "93719800066", "93719800067", "93719800068", "93719800069", "93719800070", "841224982320", "01224982320", "1224982320", "841229162704", "01229162704", "1229162704", "841247067973", "01247067973", "1247067973", "841265262376", "01265262376", "1265262376", "841267189314", "01267189314", "1267189314", "841647356978", "01647356978", "1647356978", "841674462803", "01674462803", "1674462803", "841697661937", "01697661937", "1697661937"];
+        window.recaptchaOptions = {
+            lang: 'vi'
+        }
+        window.isUseZCaptcha = true;
+        window.encrytKey = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvmsi1wjWK5czpCuNktrF68XqwFFb8cglxnIR48PBHVaQgFTyiMRsp3BuyFaQd2WmruWWrMXESVil8N/dC0f0do+ffbrAFeg7XH5kBFYrK4rAgqP/pTjdVMcUZvmQaGmF5AxbCuV7tE1yBW3rp59xrrg1A1OSDlrdDPxLPiBkpVLC9qNXy9sY3RafKX+RaD4DVdG00CgMxu7hRKa9AeUoNTtAAszfwwEFRdFkjFYa+auw0CqvKNgxcgg96S2NvKfIUlNcC2Cgro3p6rgR3316fzUAPH/5VCyDo6nyl1z7uxmMfZJB4D5gVX5RpYm56Co0L9+MNNmEBKT2wVJr0bs2VQIDAQAB';
+        window.secureParams = ["password", "phone", "phone_num"];
+    </script>
+    <script async="">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-118505750-4', 'auto');
+        ga('send', 'pageview');</script>
+
+    <script async="">
+        var _zap = _zap || [];
+        _zap.push(["_setAccount", "ZA-43334183020948"]);
+        (function (e, t, n, r, a, o, c) {
+            e[a + "_q"] = e[a + "_q"] || [], e[a] = e[a] || {};
+            var s = ["trackPageview", "trackEvent", "getVisitorID"];
+            for (i in s)
+                e[a][s[i]] = function (t) {
+                    return function () {
+                        e[a + "_q"].push([t, arguments])
+                    }
+                }(s[i]);
+            o = t.createElement(n), c = t.getElementsByTagName(n)[0], o.async = 1, o.src = r + "?" + Math.floor((new Date).getTime() / 86400000), c.parentNode.insertBefore(o, c);
+        })(window, document, "script", "//za.zdn.vn/v3/za.js", "ZA");</script>
+</head>
+
+<body>
+    <div id="app" class="wrapper-page has-mobile">
+        <div class="wrapper-page is-only-desktop">
+            <div class="zLogin-layout">
+                <div class="header animated fadeIn">
+                    <h1><a class="logo" style="cursor: auto;"></a></h1>
+                    <h2 style="font-size: 1.1em;">Đăng nhập tài khoản Zalo<br>để kết nối với ứng dụng Zalo Web</h2>
+                </div>
+                <div class="body">
+                    <div></div>
+                    <div class="animated fadeIn body-container">
+                        <div class="tabs animated fadeIn">
+                            <ul>
+                                <li><a class="">Với Mã QR</a></li>
+                                <li><a class="active">Với Số điện thoại</a></li>
+                            </ul>
+                        </div>
+                        <div class="content animated fadeIn">
+                            <div class="animated fadeIn">
+                                <div class="form-signin">
+                                    <div class="animated fadeIn">
+                                        <div class="line-form has-ico has-flag">
+                                            <div><i class="fa fa-mobile"></i>
+                                                <div class="select-flag"><span class="tf">+84</span>
+                                                    <div class="dropdown-flag hidden">
+                                                        <ul>
+                                                            <li class="selected"><span class="flag flag-vn"
+                                                                    alt="Vietnam"></span><span><strong>Vietnam</strong>
+                                                                    <em>+84</em></span></li>
+                                                            <li class=""><span class="flag flag-af"
+                                                                    alt="Afghanistan"></span><span><strong>Afghanistan</strong>
+                                                                    <em>+93</em></span></li>
+                                                            <li class=""><span class="flag flag-al"
+                                                                    alt="Albania"></span><span><strong>Albania</strong>
+                                                                    <em>+355</em></span></li>
+                                                            <li class=""><span class="flag flag-dz"
+                                                                    alt="Algeria"></span><span><strong>Algeria</strong>
+                                                                    <em>+213</em></span></li>
+                                                            <li class=""><span class="flag flag-as"
+                                                                    alt="American Samoa"></span><span><strong>American
+                                                                        Samoa</strong> <em>+1684</em></span></li>
+                                                            <li class=""><span class="flag flag-ad"
+                                                                    alt="Andorra"></span><span><strong>Andorra</strong>
+                                                                    <em>+376</em></span></li>
+                                                            <li class=""><span class="flag flag-ao"
+                                                                    alt="Angola"></span><span><strong>Angola</strong>
+                                                                    <em>+244</em></span></li>
+                                                            <li class=""><span class="flag flag-ai"
+                                                                    alt="Anguilla"></span><span><strong>Anguilla</strong>
+                                                                    <em>+1264</em></span></li>
+                                                            <li class=""><span class="flag flag-aq"
+                                                                    alt="Antarctica"></span><span><strong>Antarctica</strong>
+                                                                    <em>+672</em></span></li>
+                                                            <li class=""><span class="flag flag-ag"
+                                                                    alt="Antigua And Barbuda"></span><span><strong>Antigua
+                                                                        And Barbuda</strong> <em>+1268</em></span></li>
+                                                            <li class=""><span class="flag flag-ar"
+                                                                    alt="Argentina"></span><span><strong>Argentina</strong>
+                                                                    <em>+54</em></span></li>
+                                                            <li class=""><span class="flag flag-am"
+                                                                    alt="Armenia"></span><span><strong>Armenia</strong>
+                                                                    <em>+374</em></span></li>
+                                                            <li class=""><span class="flag flag-aw"
+                                                                    alt="Aruba"></span><span><strong>Aruba</strong>
+                                                                    <em>+297</em></span></li>
+                                                            <li class=""><span class="flag flag-ac"
+                                                                    alt="Ascension Island"></span><span><strong>Ascension
+                                                                        Island</strong> <em>+247</em></span></li>
+                                                            <li class=""><span class="flag flag-au"
+                                                                    alt="Australia"></span><span><strong>Australia</strong>
+                                                                    <em>+61</em></span></li>
+                                                            <li class=""><span class="flag flag-at"
+                                                                    alt="Austria"></span><span><strong>Austria</strong>
+                                                                    <em>+43</em></span></li>
+                                                            <li class=""><span class="flag flag-az"
+                                                                    alt="Azerbaijan"></span><span><strong>Azerbaijan</strong>
+                                                                    <em>+994</em></span></li>
+                                                            <li class=""><span class="flag flag-bs"
+                                                                    alt="Bahamas"></span><span><strong>Bahamas</strong>
+                                                                    <em>+1242</em></span></li>
+                                                            <li class=""><span class="flag flag-bh"
+                                                                    alt="Bahrain"></span><span><strong>Bahrain</strong>
+                                                                    <em>+973</em></span></li>
+                                                            <li class=""><span class="flag flag-bd"
+                                                                    alt="Bangladesh"></span><span><strong>Bangladesh</strong>
+                                                                    <em>+880</em></span></li>
+                                                            <li class=""><span class="flag flag-bb"
+                                                                    alt="Barbados"></span><span><strong>Barbados</strong>
+                                                                    <em>+1246</em></span></li>
+                                                            <li class=""><span class="flag flag-by"
+                                                                    alt="Belarus"></span><span><strong>Belarus</strong>
+                                                                    <em>+375</em></span></li>
+                                                            <li class=""><span class="flag flag-be"
+                                                                    alt="Belgium"></span><span><strong>Belgium</strong>
+                                                                    <em>+32</em></span></li>
+                                                            <li class=""><span class="flag flag-bz"
+                                                                    alt="Belize"></span><span><strong>Belize</strong>
+                                                                    <em>+501</em></span></li>
+                                                            <li class=""><span class="flag flag-bj"
+                                                                    alt="Benin"></span><span><strong>Benin</strong>
+                                                                    <em>+229</em></span></li>
+                                                            <li class=""><span class="flag flag-bm"
+                                                                    alt="Bermuda"></span><span><strong>Bermuda</strong>
+                                                                    <em>+1441</em></span></li>
+                                                            <li class=""><span class="flag flag-bt"
+                                                                    alt="Bhutan"></span><span><strong>Bhutan</strong>
+                                                                    <em>+975</em></span></li>
+                                                            <li class=""><span class="flag flag-bo"
+                                                                    alt="Bolivia, Plurinational State Of"></span><span><strong>Bolivia,
+                                                                        Plurinational State Of</strong>
+                                                                    <em>+591</em></span></li>
+                                                            <li class=""><span class="flag flag-bq"
+                                                                    alt="Bonaire, Saint Eustatius And Saba"></span><span><strong>Bonaire,
+                                                                        Saint Eustatius And Saba</strong>
+                                                                    <em>+599</em></span></li>
+                                                            <li class=""><span class="flag flag-ba"
+                                                                    alt="Bosnia &amp; Herzegovina"></span><span><strong>Bosnia
+                                                                        &amp; Herzegovina</strong> <em>+387</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-bw"
+                                                                    alt="Botswana"></span><span><strong>Botswana</strong>
+                                                                    <em>+267</em></span></li>
+                                                            <li class=""><span class="flag flag-br"
+                                                                    alt="Brazil"></span><span><strong>Brazil</strong>
+                                                                    <em>+55</em></span></li>
+                                                            <li class=""><span class="flag flag-io"
+                                                                    alt="British Indian Ocean Territory"></span><span><strong>British
+                                                                        Indian Ocean Territory</strong>
+                                                                    <em>+246</em></span></li>
+                                                            <li class=""><span class="flag flag-bn"
+                                                                    alt="Brunei Darussalam"></span><span><strong>Brunei
+                                                                        Darussalam</strong> <em>+673</em></span></li>
+                                                            <li class=""><span class="flag flag-bg"
+                                                                    alt="Bulgaria"></span><span><strong>Bulgaria</strong>
+                                                                    <em>+359</em></span></li>
+                                                            <li class=""><span class="flag flag-bf"
+                                                                    alt="Burkina Faso"></span><span><strong>Burkina
+                                                                        Faso</strong> <em>+226</em></span></li>
+                                                            <li class=""><span class="flag flag-bi"
+                                                                    alt="Burundi"></span><span><strong>Burundi</strong>
+                                                                    <em>+257</em></span></li>
+                                                            <li class=""><span class="flag flag-kh"
+                                                                    alt="Cambodia"></span><span><strong>Cambodia</strong>
+                                                                    <em>+855</em></span></li>
+                                                            <li class=""><span class="flag flag-cm"
+                                                                    alt="Cameroon"></span><span><strong>Cameroon</strong>
+                                                                    <em>+237</em></span></li>
+                                                            <li class=""><span class="flag flag-ca"
+                                                                    alt="Canada"></span><span><strong>Canada</strong>
+                                                                    <em>+1</em></span></li>
+                                                            <li class=""><span class="flag flag-cv"
+                                                                    alt="Cape Verde"></span><span><strong>Cape
+                                                                        Verde</strong> <em>+238</em></span></li>
+                                                            <li class=""><span class="flag flag-ky"
+                                                                    alt="Cayman Islands"></span><span><strong>Cayman
+                                                                        Islands</strong> <em>+1345</em></span></li>
+                                                            <li class=""><span class="flag flag-cf"
+                                                                    alt="Central African Republic"></span><span><strong>Central
+                                                                        African Republic</strong> <em>+236</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-td"
+                                                                    alt="Chad"></span><span><strong>Chad</strong>
+                                                                    <em>+235</em></span></li>
+                                                            <li class=""><span class="flag flag-cl"
+                                                                    alt="Chile"></span><span><strong>Chile</strong>
+                                                                    <em>+56</em></span></li>
+                                                            <li class=""><span class="flag flag-cn"
+                                                                    alt="China"></span><span><strong>China</strong>
+                                                                    <em>+86</em></span></li>
+                                                            <li class=""><span class="flag flag-cx"
+                                                                    alt="Christmas Island"></span><span><strong>Christmas
+                                                                        Island</strong> <em>+61</em></span></li>
+                                                            <li class=""><span class="flag flag-cc"
+                                                                    alt="Cocos (Keeling) Islands"></span><span><strong>Cocos
+                                                                        (Keeling) Islands</strong> <em>+61</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-co"
+                                                                    alt="Colombia"></span><span><strong>Colombia</strong>
+                                                                    <em>+57</em></span></li>
+                                                            <li class=""><span class="flag flag-km"
+                                                                    alt="Comoros"></span><span><strong>Comoros</strong>
+                                                                    <em>+269</em></span></li>
+                                                            <li class=""><span class="flag flag-ck"
+                                                                    alt="Cook Islands"></span><span><strong>Cook
+                                                                        Islands</strong> <em>+682</em></span></li>
+                                                            <li class=""><span class="flag flag-cr"
+                                                                    alt="Costa Rica"></span><span><strong>Costa
+                                                                        Rica</strong> <em>+506</em></span></li>
+                                                            <li class=""><span class="flag flag-ci"
+                                                                    alt="Cote d&#39;Ivoire"></span><span><strong>Cote
+                                                                        d'Ivoire</strong> <em>+225</em></span></li>
+                                                            <li class=""><span class="flag flag-hr"
+                                                                    alt="Croatia"></span><span><strong>Croatia</strong>
+                                                                    <em>+385</em></span></li>
+                                                            <li class=""><span class="flag flag-cu"
+                                                                    alt="Cuba"></span><span><strong>Cuba</strong>
+                                                                    <em>+53</em></span></li>
+                                                            <li class=""><span class="flag flag-cw"
+                                                                    alt="Curacao"></span><span><strong>Curacao</strong>
+                                                                    <em>+599</em></span></li>
+                                                            <li class=""><span class="flag flag-cy"
+                                                                    alt="Cyprus"></span><span><strong>Cyprus</strong>
+                                                                    <em>+357</em></span></li>
+                                                            <li class=""><span class="flag flag-cz"
+                                                                    alt="Czech Republic"></span><span><strong>Czech
+                                                                        Republic</strong> <em>+420</em></span></li>
+                                                            <li class=""><span class="flag flag-cd"
+                                                                    alt="Democratic Republic Of Congo"></span><span><strong>Democratic
+                                                                        Republic Of Congo</strong> <em>+243</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-dk"
+                                                                    alt="Denmark"></span><span><strong>Denmark</strong>
+                                                                    <em>+45</em></span></li>
+                                                            <li class=""><span class="flag flag-dj"
+                                                                    alt="Djibouti"></span><span><strong>Djibouti</strong>
+                                                                    <em>+253</em></span></li>
+                                                            <li class=""><span class="flag flag-dm"
+                                                                    alt="Dominica"></span><span><strong>Dominica</strong>
+                                                                    <em>+1767</em></span></li>
+                                                            <li class=""><span class="flag flag-do"
+                                                                    alt="Dominican Republic"></span><span><strong>Dominican
+                                                                        Republic</strong> <em>+1809</em></span></li>
+                                                            <li class=""><span class="flag flag-tl"
+                                                                    alt="East Timor"></span><span><strong>East
+                                                                        Timor</strong> <em>+670</em></span></li>
+                                                            <li class=""><span class="flag flag-ec"
+                                                                    alt="Ecuador"></span><span><strong>Ecuador</strong>
+                                                                    <em>+593</em></span></li>
+                                                            <li class=""><span class="flag flag-eg"
+                                                                    alt="Egypt"></span><span><strong>Egypt</strong>
+                                                                    <em>+20</em></span></li>
+                                                            <li class=""><span class="flag flag-sv"
+                                                                    alt="El Salvador"></span><span><strong>El
+                                                                        Salvador</strong> <em>+503</em></span></li>
+                                                            <li class=""><span class="flag flag-gq"
+                                                                    alt="Equatorial Guinea"></span><span><strong>Equatorial
+                                                                        Guinea</strong> <em>+240</em></span></li>
+                                                            <li class=""><span class="flag flag-er"
+                                                                    alt="Eritrea"></span><span><strong>Eritrea</strong>
+                                                                    <em>+291</em></span></li>
+                                                            <li class=""><span class="flag flag-ee"
+                                                                    alt="Estonia"></span><span><strong>Estonia</strong>
+                                                                    <em>+372</em></span></li>
+                                                            <li class=""><span class="flag flag-et"
+                                                                    alt="Ethiopia"></span><span><strong>Ethiopia</strong>
+                                                                    <em>+251</em></span></li>
+                                                            <li class=""><span class="flag flag-eu"
+                                                                    alt="European Union"></span><span><strong>European
+                                                                        Union</strong> <em>+388</em></span></li>
+                                                            <li class=""><span class="flag flag-fk"
+                                                                    alt="Falkland Islands"></span><span><strong>Falkland
+                                                                        Islands</strong> <em>+500</em></span></li>
+                                                            <li class=""><span class="flag flag-fo"
+                                                                    alt="Faroe Islands"></span><span><strong>Faroe
+                                                                        Islands</strong> <em>+298</em></span></li>
+                                                            <li class=""><span class="flag flag-fj"
+                                                                    alt="Fiji"></span><span><strong>Fiji</strong>
+                                                                    <em>+679</em></span></li>
+                                                            <li class=""><span class="flag flag-fi"
+                                                                    alt="Finland"></span><span><strong>Finland</strong>
+                                                                    <em>+358</em></span></li>
+                                                            <li class=""><span class="flag flag-fr"
+                                                                    alt="France"></span><span><strong>France</strong>
+                                                                    <em>+33</em></span></li>
+                                                            <li class=""><span class="flag flag-fx"
+                                                                    alt="France, Metropolitan"></span><span><strong>France,
+                                                                        Metropolitan</strong> <em>+241</em></span></li>
+                                                            <li class=""><span class="flag flag-gf"
+                                                                    alt="French Guiana"></span><span><strong>French
+                                                                        Guiana</strong> <em>+44</em></span></li>
+                                                            <li class=""><span class="flag flag-pf"
+                                                                    alt="French Polynesia"></span><span><strong>French
+                                                                        Polynesia</strong> <em>+689</em></span></li>
+                                                            <li class=""><span class="flag flag-ga"
+                                                                    alt="Gabon"></span><span><strong>Gabon</strong>
+                                                                    <em>+44</em></span></li>
+                                                            <li class=""><span class="flag flag-gm"
+                                                                    alt="Gambia"></span><span><strong>Gambia</strong>
+                                                                    <em>+220</em></span></li>
+                                                            <li class=""><span class="flag flag-ge"
+                                                                    alt="Georgia"></span><span><strong>Georgia</strong>
+                                                                    <em>+594</em></span></li>
+                                                            <li class=""><span class="flag flag-de"
+                                                                    alt="Germany"></span><span><strong>Germany</strong>
+                                                                    <em>+49</em></span></li>
+                                                            <li class=""><span class="flag flag-gh"
+                                                                    alt="Ghana"></span><span><strong>Ghana</strong>
+                                                                    <em>+233</em></span></li>
+                                                            <li class=""><span class="flag flag-gi"
+                                                                    alt="Gibraltar"></span><span><strong>Gibraltar</strong>
+                                                                    <em>+350</em></span></li>
+                                                            <li class=""><span class="flag flag-gr"
+                                                                    alt="Greece"></span><span><strong>Greece</strong>
+                                                                    <em>+30</em></span></li>
+                                                            <li class=""><span class="flag flag-gl"
+                                                                    alt="Greenland"></span><span><strong>Greenland</strong>
+                                                                    <em>+299</em></span></li>
+                                                            <li class=""><span class="flag flag-gd"
+                                                                    alt="Grenada"></span><span><strong>Grenada</strong>
+                                                                    <em>+995</em></span></li>
+                                                            <li class=""><span class="flag flag-gp"
+                                                                    alt="Guadeloupe"></span><span><strong>Guadeloupe</strong>
+                                                                    <em>+590</em></span></li>
+                                                            <li class=""><span class="flag flag-gu"
+                                                                    alt="Guam"></span><span><strong>Guam</strong>
+                                                                    <em>+1671</em></span></li>
+                                                            <li class=""><span class="flag flag-gt"
+                                                                    alt="Guatemala"></span><span><strong>Guatemala</strong>
+                                                                    <em>+502</em></span></li>
+                                                            <li class=""><span class="flag flag-gn"
+                                                                    alt="Guinea"></span><span><strong>Guinea</strong>
+                                                                    <em>+224</em></span></li>
+                                                            <li class=""><span class="flag flag-gw"
+                                                                    alt="Guinea-bissau"></span><span><strong>Guinea-bissau</strong>
+                                                                    <em>+245</em></span></li>
+                                                            <li class=""><span class="flag flag-gy"
+                                                                    alt="Guyana"></span><span><strong>Guyana</strong>
+                                                                    <em>+592</em></span></li>
+                                                            <li class=""><span class="flag flag-ht"
+                                                                    alt="Haiti"></span><span><strong>Haiti</strong>
+                                                                    <em>+509</em></span></li>
+                                                            <li class=""><span class="flag flag-hn"
+                                                                    alt="Honduras"></span><span><strong>Honduras</strong>
+                                                                    <em>+504</em></span></li>
+                                                            <li class=""><span class="flag flag-hk"
+                                                                    alt="Hong Kong"></span><span><strong>Hong
+                                                                        Kong</strong> <em>+852</em></span></li>
+                                                            <li class=""><span class="flag flag-hu"
+                                                                    alt="Hungary"></span><span><strong>Hungary</strong>
+                                                                    <em>+36</em></span></li>
+                                                            <li class=""><span class="flag flag-is"
+                                                                    alt="Iceland"></span><span><strong>Iceland</strong>
+                                                                    <em>+354</em></span></li>
+                                                            <li class=""><span class="flag flag-in"
+                                                                    alt="India"></span><span><strong>India</strong>
+                                                                    <em>+91</em></span></li>
+                                                            <li class=""><span class="flag flag-id"
+                                                                    alt="Indonesia"></span><span><strong>Indonesia</strong>
+                                                                    <em>+62</em></span></li>
+                                                            <li class=""><span class="flag flag-ir"
+                                                                    alt="Iran, Islamic Republic Of"></span><span><strong>Iran,
+                                                                        Islamic Republic Of</strong> <em>+98</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-iq"
+                                                                    alt="Iraq"></span><span><strong>Iraq</strong>
+                                                                    <em>+964</em></span></li>
+                                                            <li class=""><span class="flag flag-ie"
+                                                                    alt="Ireland"></span><span><strong>Ireland</strong>
+                                                                    <em>+353</em></span></li>
+                                                            <li class=""><span class="flag flag-im"
+                                                                    alt="Isle Of Man"></span><span><strong>Isle Of
+                                                                        Man</strong> <em>+44</em></span></li>
+                                                            <li class=""><span class="flag flag-il"
+                                                                    alt="Israel"></span><span><strong>Israel</strong>
+                                                                    <em>+972</em></span></li>
+                                                            <li class=""><span class="flag flag-it"
+                                                                    alt="Italy"></span><span><strong>Italy</strong>
+                                                                    <em>+39</em></span></li>
+                                                            <li class=""><span class="flag flag-jm"
+                                                                    alt="Jamaica"></span><span><strong>Jamaica</strong>
+                                                                    <em>+1876</em></span></li>
+                                                            <li class=""><span class="flag flag-jp"
+                                                                    alt="Japan"></span><span><strong>Japan</strong>
+                                                                    <em>+81</em></span></li>
+                                                            <li class=""><span class="flag flag-je"
+                                                                    alt="Jersey"></span><span><strong>Jersey</strong>
+                                                                    <em>+44</em></span></li>
+                                                            <li class=""><span class="flag flag-jo"
+                                                                    alt="Jordan"></span><span><strong>Jordan</strong>
+                                                                    <em>+962</em></span></li>
+                                                            <li class=""><span class="flag flag-kz"
+                                                                    alt="Kazakhstan"></span><span><strong>Kazakhstan</strong>
+                                                                    <em>+7</em></span></li>
+                                                            <li class=""><span class="flag flag-ke"
+                                                                    alt="Kenya"></span><span><strong>Kenya</strong>
+                                                                    <em>+254</em></span></li>
+                                                            <li class=""><span class="flag flag-ki"
+                                                                    alt="Kiribati"></span><span><strong>Kiribati</strong>
+                                                                    <em>+686</em></span></li>
+                                                            <li class=""><span class="flag flag-kp"
+                                                                    alt="Korea, Democratic People&#39;s Republic Of"></span><span><strong>Korea,
+                                                                        Democratic People's Republic Of</strong>
+                                                                    <em>+850</em></span></li>
+                                                            <li class=""><span class="flag flag-kr"
+                                                                    alt="Korea, Republic Of"></span><span><strong>Korea,
+                                                                        Republic Of</strong> <em>+82</em></span></li>
+                                                            <li class=""><span class="flag flag-kw"
+                                                                    alt="Kuwait"></span><span><strong>Kuwait</strong>
+                                                                    <em>+965</em></span></li>
+                                                            <li class=""><span class="flag flag-kg"
+                                                                    alt="Kyrgyzstan"></span><span><strong>Kyrgyzstan</strong>
+                                                                    <em>+996</em></span></li>
+                                                            <li class=""><span class="flag flag-la"
+                                                                    alt="Lao People&#39;s Democratic Republic"></span><span><strong>Lao
+                                                                        People's Democratic Republic</strong>
+                                                                    <em>+856</em></span></li>
+                                                            <li class=""><span class="flag flag-lv"
+                                                                    alt="Latvia"></span><span><strong>Latvia</strong>
+                                                                    <em>+371</em></span></li>
+                                                            <li class=""><span class="flag flag-lb"
+                                                                    alt="Lebanon"></span><span><strong>Lebanon</strong>
+                                                                    <em>+961</em></span></li>
+                                                            <li class=""><span class="flag flag-ls"
+                                                                    alt="Lesotho"></span><span><strong>Lesotho</strong>
+                                                                    <em>+266</em></span></li>
+                                                            <li class=""><span class="flag flag-lr"
+                                                                    alt="Liberia"></span><span><strong>Liberia</strong>
+                                                                    <em>+231</em></span></li>
+                                                            <li class=""><span class="flag flag-ly"
+                                                                    alt="Libya"></span><span><strong>Libya</strong>
+                                                                    <em>+218</em></span></li>
+                                                            <li class=""><span class="flag flag-li"
+                                                                    alt="Liechtenstein"></span><span><strong>Liechtenstein</strong>
+                                                                    <em>+423</em></span></li>
+                                                            <li class=""><span class="flag flag-lt"
+                                                                    alt="Lithuania"></span><span><strong>Lithuania</strong>
+                                                                    <em>+370</em></span></li>
+                                                            <li class=""><span class="flag flag-lu"
+                                                                    alt="Luxembourg"></span><span><strong>Luxembourg</strong>
+                                                                    <em>+352</em></span></li>
+                                                            <li class=""><span class="flag flag-mo"
+                                                                    alt="Macao"></span><span><strong>Macao</strong>
+                                                                    <em>+853</em></span></li>
+                                                            <li class=""><span class="flag flag-mk"
+                                                                    alt="Macedonia, The Former Yugoslav Republic Of"></span><span><strong>Macedonia,
+                                                                        The Former Yugoslav Republic Of</strong>
+                                                                    <em>+389</em></span></li>
+                                                            <li class=""><span class="flag flag-mg"
+                                                                    alt="Madagascar"></span><span><strong>Madagascar</strong>
+                                                                    <em>+261</em></span></li>
+                                                            <li class=""><span class="flag flag-mw"
+                                                                    alt="Malawi"></span><span><strong>Malawi</strong>
+                                                                    <em>+265</em></span></li>
+                                                            <li class=""><span class="flag flag-my"
+                                                                    alt="Malaysia"></span><span><strong>Malaysia</strong>
+                                                                    <em>+60</em></span></li>
+                                                            <li class=""><span class="flag flag-mv"
+                                                                    alt="Maldives"></span><span><strong>Maldives</strong>
+                                                                    <em>+960</em></span></li>
+                                                            <li class=""><span class="flag flag-ml"
+                                                                    alt="Mali"></span><span><strong>Mali</strong>
+                                                                    <em>+223</em></span></li>
+                                                            <li class=""><span class="flag flag-mt"
+                                                                    alt="Malta"></span><span><strong>Malta</strong>
+                                                                    <em>+356</em></span></li>
+                                                            <li class=""><span class="flag flag-mh"
+                                                                    alt="Marshall Islands"></span><span><strong>Marshall
+                                                                        Islands</strong> <em>+692</em></span></li>
+                                                            <li class=""><span class="flag flag-mq"
+                                                                    alt="Martinique"></span><span><strong>Martinique</strong>
+                                                                    <em>+596</em></span></li>
+                                                            <li class=""><span class="flag flag-mr"
+                                                                    alt="Mauritania"></span><span><strong>Mauritania</strong>
+                                                                    <em>+222</em></span></li>
+                                                            <li class=""><span class="flag flag-mu"
+                                                                    alt="Mauritius"></span><span><strong>Mauritius</strong>
+                                                                    <em>+230</em></span></li>
+                                                            <li class=""><span class="flag flag-yt"
+                                                                    alt="Mayotte"></span><span><strong>Mayotte</strong>
+                                                                    <em>+262</em></span></li>
+                                                            <li class=""><span class="flag flag-mx"
+                                                                    alt="Mexico"></span><span><strong>Mexico</strong>
+                                                                    <em>+52</em></span></li>
+                                                            <li class=""><span class="flag flag-fm"
+                                                                    alt="Micronesia, Federated States Of"></span><span><strong>Micronesia,
+                                                                        Federated States Of</strong>
+                                                                    <em>+691</em></span></li>
+                                                            <li class=""><span class="flag flag-md"
+                                                                    alt="Moldova"></span><span><strong>Moldova</strong>
+                                                                    <em>+373</em></span></li>
+                                                            <li class=""><span class="flag flag-mc"
+                                                                    alt="Monaco"></span><span><strong>Monaco</strong>
+                                                                    <em>+377</em></span></li>
+                                                            <li class=""><span class="flag flag-mn"
+                                                                    alt="Mongolia"></span><span><strong>Mongolia</strong>
+                                                                    <em>+976</em></span></li>
+                                                            <li class=""><span class="flag flag-me"
+                                                                    alt="Montenegro"></span><span><strong>Montenegro</strong>
+                                                                    <em>+382</em></span></li>
+                                                            <li class=""><span class="flag flag-ms"
+                                                                    alt="Montserrat"></span><span><strong>Montserrat</strong>
+                                                                    <em>+1664</em></span></li>
+                                                            <li class=""><span class="flag flag-ma"
+                                                                    alt="Morocco"></span><span><strong>Morocco</strong>
+                                                                    <em>+212</em></span></li>
+                                                            <li class=""><span class="flag flag-mz"
+                                                                    alt="Mozambique"></span><span><strong>Mozambique</strong>
+                                                                    <em>+258</em></span></li>
+                                                            <li class=""><span class="flag flag-mm"
+                                                                    alt="Myanmar"></span><span><strong>Myanmar</strong>
+                                                                    <em>+95</em></span></li>
+                                                            <li class=""><span class="flag flag-na"
+                                                                    alt="Namibia"></span><span><strong>Namibia</strong>
+                                                                    <em>+264</em></span></li>
+                                                            <li class=""><span class="flag flag-nr"
+                                                                    alt="Nauru"></span><span><strong>Nauru</strong>
+                                                                    <em>+674</em></span></li>
+                                                            <li class=""><span class="flag flag-np"
+                                                                    alt="Nepal"></span><span><strong>Nepal</strong>
+                                                                    <em>+977</em></span></li>
+                                                            <li class=""><span class="flag flag-nl"
+                                                                    alt="Netherlands"></span><span><strong>Netherlands</strong>
+                                                                    <em>+31</em></span></li>
+                                                            <li class=""><span class="flag flag-nc"
+                                                                    alt="New Caledonia"></span><span><strong>New
+                                                                        Caledonia</strong> <em>+687</em></span></li>
+                                                            <li class=""><span class="flag flag-nz"
+                                                                    alt="New Zealand"></span><span><strong>New
+                                                                        Zealand</strong> <em>+64</em></span></li>
+                                                            <li class=""><span class="flag flag-ni"
+                                                                    alt="Nicaragua"></span><span><strong>Nicaragua</strong>
+                                                                    <em>+505</em></span></li>
+                                                            <li class=""><span class="flag flag-ne"
+                                                                    alt="Niger"></span><span><strong>Niger</strong>
+                                                                    <em>+227</em></span></li>
+                                                            <li class=""><span class="flag flag-ng"
+                                                                    alt="Nigeria"></span><span><strong>Nigeria</strong>
+                                                                    <em>+234</em></span></li>
+                                                            <li class=""><span class="flag flag-nu"
+                                                                    alt="Niue"></span><span><strong>Niue</strong>
+                                                                    <em>+683</em></span></li>
+                                                            <li class=""><span class="flag flag-nf"
+                                                                    alt="Norfolk Island"></span><span><strong>Norfolk
+                                                                        Island</strong> <em>+672</em></span></li>
+                                                            <li class=""><span class="flag flag-mp"
+                                                                    alt="Northern Mariana Islands"></span><span><strong>Northern
+                                                                        Mariana Islands</strong> <em>+1670</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-no"
+                                                                    alt="Norway"></span><span><strong>Norway</strong>
+                                                                    <em>+47</em></span></li>
+                                                            <li class=""><span class="flag flag-om"
+                                                                    alt="Oman"></span><span><strong>Oman</strong>
+                                                                    <em>+968</em></span></li>
+                                                            <li class=""><span class="flag flag-pk"
+                                                                    alt="Pakistan"></span><span><strong>Pakistan</strong>
+                                                                    <em>+92</em></span></li>
+                                                            <li class=""><span class="flag flag-pw"
+                                                                    alt="Palau"></span><span><strong>Palau</strong>
+                                                                    <em>+680</em></span></li>
+                                                            <li class=""><span class="flag flag-ps"
+                                                                    alt="Palestinian Territory, Occupied"></span><span><strong>Palestinian
+                                                                        Territory, Occupied</strong>
+                                                                    <em>+970</em></span></li>
+                                                            <li class=""><span class="flag flag-pa"
+                                                                    alt="Panama"></span><span><strong>Panama</strong>
+                                                                    <em>+507</em></span></li>
+                                                            <li class=""><span class="flag flag-pg"
+                                                                    alt="Papua New Guinea"></span><span><strong>Papua
+                                                                        New Guinea</strong> <em>+675</em></span></li>
+                                                            <li class=""><span class="flag flag-py"
+                                                                    alt="Paraguay"></span><span><strong>Paraguay</strong>
+                                                                    <em>+595</em></span></li>
+                                                            <li class=""><span class="flag flag-pe"
+                                                                    alt="Peru"></span><span><strong>Peru</strong>
+                                                                    <em>+51</em></span></li>
+                                                            <li class=""><span class="flag flag-ph"
+                                                                    alt="Philippines"></span><span><strong>Philippines</strong>
+                                                                    <em>+63</em></span></li>
+                                                            <li class=""><span class="flag flag-pl"
+                                                                    alt="Poland"></span><span><strong>Poland</strong>
+                                                                    <em>+48</em></span></li>
+                                                            <li class=""><span class="flag flag-pt"
+                                                                    alt="Portugal"></span><span><strong>Portugal</strong>
+                                                                    <em>+351</em></span></li>
+                                                            <li class=""><span class="flag flag-pr"
+                                                                    alt="Puerto Rico"></span><span><strong>Puerto
+                                                                        Rico</strong> <em>+1787</em></span></li>
+                                                            <li class=""><span class="flag flag-qa"
+                                                                    alt="Qatar"></span><span><strong>Qatar</strong>
+                                                                    <em>+974</em></span></li>
+                                                            <li class=""><span class="flag flag-cg"
+                                                                    alt="Republic Of Congo"></span><span><strong>Republic
+                                                                        Of Congo</strong> <em>+242</em></span></li>
+                                                            <li class=""><span class="flag flag-re"
+                                                                    alt="Reunion"></span><span><strong>Reunion</strong>
+                                                                    <em>+262</em></span></li>
+                                                            <li class=""><span class="flag flag-ro"
+                                                                    alt="Romania"></span><span><strong>Romania</strong>
+                                                                    <em>+40</em></span></li>
+                                                            <li class=""><span class="flag flag-ru"
+                                                                    alt="Russian Federation"></span><span><strong>Russian
+                                                                        Federation</strong> <em>+7</em></span></li>
+                                                            <li class=""><span class="flag flag-rw"
+                                                                    alt="Rwanda"></span><span><strong>Rwanda</strong>
+                                                                    <em>+250</em></span></li>
+                                                            <li class=""><span class="flag flag-bl"
+                                                                    alt="Saint Barthélemy"></span><span><strong>Saint
+                                                                        Barthélemy</strong> <em>+590</em></span></li>
+                                                            <li class=""><span class="flag flag-sh"
+                                                                    alt="Saint Helena, Ascension And Tristan Da Cunha"></span><span><strong>Saint
+                                                                        Helena, Ascension And Tristan Da Cunha</strong>
+                                                                    <em>+290</em></span></li>
+                                                            <li class=""><span class="flag flag-kn"
+                                                                    alt="Saint Kitts And Nevis"></span><span><strong>Saint
+                                                                        Kitts And Nevis</strong> <em>+1869</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-lc"
+                                                                    alt="Saint Lucia"></span><span><strong>Saint
+                                                                        Lucia</strong> <em>+1758</em></span></li>
+                                                            <li class=""><span class="flag flag-mf"
+                                                                    alt="Saint Martin"></span><span><strong>Saint
+                                                                        Martin</strong> <em>+590</em></span></li>
+                                                            <li class=""><span class="flag flag-pm"
+                                                                    alt="Saint Pierre And Miquelon"></span><span><strong>Saint
+                                                                        Pierre And Miquelon</strong>
+                                                                    <em>+508</em></span></li>
+                                                            <li class=""><span class="flag flag-vc"
+                                                                    alt="Saint Vincent And The Grenadines"></span><span><strong>Saint
+                                                                        Vincent And The Grenadines</strong>
+                                                                    <em>+1784</em></span></li>
+                                                            <li class=""><span class="flag flag-ws"
+                                                                    alt="Samoa"></span><span><strong>Samoa</strong>
+                                                                    <em>+685</em></span></li>
+                                                            <li class=""><span class="flag flag-sm"
+                                                                    alt="San Marino"></span><span><strong>San
+                                                                        Marino</strong> <em>+378</em></span></li>
+                                                            <li class=""><span class="flag flag-st"
+                                                                    alt="Sao Tome And Principe"></span><span><strong>Sao
+                                                                        Tome And Principe</strong> <em>+239</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-sa"
+                                                                    alt="Saudi Arabia"></span><span><strong>Saudi
+                                                                        Arabia</strong> <em>+966</em></span></li>
+                                                            <li class=""><span class="flag flag-sn"
+                                                                    alt="Senegal"></span><span><strong>Senegal</strong>
+                                                                    <em>+221</em></span></li>
+                                                            <li class=""><span class="flag flag-rs"
+                                                                    alt="Serbia"></span><span><strong>Serbia</strong>
+                                                                    <em>+381</em></span></li>
+                                                            <li class=""><span class="flag flag-sc"
+                                                                    alt="Seychelles"></span><span><strong>Seychelles</strong>
+                                                                    <em>+248</em></span></li>
+                                                            <li class=""><span class="flag flag-sl"
+                                                                    alt="Sierra Leone"></span><span><strong>Sierra
+                                                                        Leone</strong> <em>+232</em></span></li>
+                                                            <li class=""><span class="flag flag-sg"
+                                                                    alt="Singapore"></span><span><strong>Singapore</strong>
+                                                                    <em>+65</em></span></li>
+                                                            <li class=""><span class="flag flag-sx"
+                                                                    alt="Sint Maarten"></span><span><strong>Sint
+                                                                        Maarten</strong> <em>+1721</em></span></li>
+                                                            <li class=""><span class="flag flag-sk"
+                                                                    alt="Slovakia"></span><span><strong>Slovakia</strong>
+                                                                    <em>+421</em></span></li>
+                                                            <li class=""><span class="flag flag-si"
+                                                                    alt="Slovenia"></span><span><strong>Slovenia</strong>
+                                                                    <em>+386</em></span></li>
+                                                            <li class=""><span class="flag flag-sb"
+                                                                    alt="Solomon Islands"></span><span><strong>Solomon
+                                                                        Islands</strong> <em>+677</em></span></li>
+                                                            <li class=""><span class="flag flag-so"
+                                                                    alt="Somalia"></span><span><strong>Somalia</strong>
+                                                                    <em>+252</em></span></li>
+                                                            <li class=""><span class="flag flag-za"
+                                                                    alt="South Africa"></span><span><strong>South
+                                                                        Africa</strong> <em>+27</em></span></li>
+                                                            <li class=""><span class="flag flag-es"
+                                                                    alt="Spain"></span><span><strong>Spain</strong>
+                                                                    <em>+34</em></span></li>
+                                                            <li class=""><span class="flag flag-lk"
+                                                                    alt="Sri Lanka"></span><span><strong>Sri
+                                                                        Lanka</strong> <em>+94</em></span></li>
+                                                            <li class=""><span class="flag flag-sd"
+                                                                    alt="Sudan"></span><span><strong>Sudan</strong>
+                                                                    <em>+249</em></span></li>
+                                                            <li class=""><span class="flag flag-sr"
+                                                                    alt="Suriname"></span><span><strong>Suriname</strong>
+                                                                    <em>+597</em></span></li>
+                                                            <li class=""><span class="flag flag-sj"
+                                                                    alt="Svalbard And Jan Mayen"></span><span><strong>Svalbard
+                                                                        And Jan Mayen</strong> <em>+47</em></span></li>
+                                                            <li class=""><span class="flag flag-sz"
+                                                                    alt="Swaziland"></span><span><strong>Swaziland</strong>
+                                                                    <em>+268</em></span></li>
+                                                            <li class=""><span class="flag flag-se"
+                                                                    alt="Sweden"></span><span><strong>Sweden</strong>
+                                                                    <em>+46</em></span></li>
+                                                            <li class=""><span class="flag flag-ch"
+                                                                    alt="Switzerland"></span><span><strong>Switzerland</strong>
+                                                                    <em>+41</em></span></li>
+                                                            <li class=""><span class="flag flag-sy"
+                                                                    alt="Syrian Arab Republic"></span><span><strong>Syrian
+                                                                        Arab Republic</strong> <em>+963</em></span></li>
+                                                            <li class=""><span class="flag flag-tw"
+                                                                    alt="Taiwan, Province Of China"></span><span><strong>Taiwan,
+                                                                        Province Of China</strong> <em>+886</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-tj"
+                                                                    alt="Tajikistan"></span><span><strong>Tajikistan</strong>
+                                                                    <em>+992</em></span></li>
+                                                            <li class=""><span class="flag flag-tz"
+                                                                    alt="Tanzania, United Republic Of"></span><span><strong>Tanzania,
+                                                                        United Republic Of</strong> <em>+255</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-th"
+                                                                    alt="Thailand"></span><span><strong>Thailand</strong>
+                                                                    <em>+66</em></span></li>
+                                                            <li class=""><span class="flag flag-tg"
+                                                                    alt="Togo"></span><span><strong>Togo</strong>
+                                                                    <em>+228</em></span></li>
+                                                            <li class=""><span class="flag flag-tk"
+                                                                    alt="Tokelau"></span><span><strong>Tokelau</strong>
+                                                                    <em>+690</em></span></li>
+                                                            <li class=""><span class="flag flag-to"
+                                                                    alt="Tonga"></span><span><strong>Tonga</strong>
+                                                                    <em>+676</em></span></li>
+                                                            <li class=""><span class="flag flag-tt"
+                                                                    alt="Trinidad And Tobago"></span><span><strong>Trinidad
+                                                                        And Tobago</strong> <em>+1868</em></span></li>
+                                                            <li class=""><span class="flag flag-ta"
+                                                                    alt="Tristan de Cunha"></span><span><strong>Tristan
+                                                                        de Cunha</strong> <em>+290</em></span></li>
+                                                            <li class=""><span class="flag flag-tn"
+                                                                    alt="Tunisia"></span><span><strong>Tunisia</strong>
+                                                                    <em>+216</em></span></li>
+                                                            <li class=""><span class="flag flag-tr"
+                                                                    alt="Turkey"></span><span><strong>Turkey</strong>
+                                                                    <em>+90</em></span></li>
+                                                            <li class=""><span class="flag flag-tm"
+                                                                    alt="Turkmenistan"></span><span><strong>Turkmenistan</strong>
+                                                                    <em>+993</em></span></li>
+                                                            <li class=""><span class="flag flag-tc"
+                                                                    alt="Turks And Caicos Islands"></span><span><strong>Turks
+                                                                        And Caicos Islands</strong>
+                                                                    <em>+1649</em></span></li>
+                                                            <li class=""><span class="flag flag-tv"
+                                                                    alt="Tuvalu"></span><span><strong>Tuvalu</strong>
+                                                                    <em>+688</em></span></li>
+                                                            <li class=""><span class="flag flag-ug"
+                                                                    alt="Uganda"></span><span><strong>Uganda</strong>
+                                                                    <em>+256</em></span></li>
+                                                            <li class=""><span class="flag flag-ua"
+                                                                    alt="Ukraine"></span><span><strong>Ukraine</strong>
+                                                                    <em>+380</em></span></li>
+                                                            <li class=""><span class="flag flag-ae"
+                                                                    alt="United Arab Emirates"></span><span><strong>United
+                                                                        Arab Emirates</strong> <em>+971</em></span></li>
+                                                            <li class=""><span class="flag flag-gb"
+                                                                    alt="United Kingdom"></span><span><strong>United
+                                                                        Kingdom</strong> <em>+44</em></span></li>
+                                                            <li class=""><span class="flag flag-us"
+                                                                    alt="United States"></span><span><strong>United
+                                                                        States</strong> <em>+1</em></span></li>
+                                                            <li class=""><span class="flag flag-uy"
+                                                                    alt="Uruguay"></span><span><strong>Uruguay</strong>
+                                                                    <em>+598</em></span></li>
+                                                            <li class=""><span class="flag flag-uz"
+                                                                    alt="Uzbekistan"></span><span><strong>Uzbekistan</strong>
+                                                                    <em>+998</em></span></li>
+                                                            <li class=""><span class="flag flag-vu"
+                                                                    alt="Vanuatu"></span><span><strong>Vanuatu</strong>
+                                                                    <em>+678</em></span></li>
+                                                            <li class=""><span class="flag flag-va"
+                                                                    alt="Vatican City State"></span><span><strong>Vatican
+                                                                        City State</strong> <em>+379</em></span></li>
+                                                            <li class=""><span class="flag flag-ve"
+                                                                    alt="Venezuela, Bolivarian Republic Of"></span><span><strong>Venezuela,
+                                                                        Bolivarian Republic Of</strong>
+                                                                    <em>+58</em></span></li>
+                                                            <li class=""><span class="flag flag-vn"
+                                                                    alt="Vietnam"></span><span><strong>Vietnam</strong>
+                                                                    <em>+84</em></span></li>
+                                                            <li class=""><span class="flag flag-vg"
+                                                                    alt="Virgin Islands (British)"></span><span><strong>Virgin
+                                                                        Islands (British)</strong> <em>+1284</em></span>
+                                                            </li>
+                                                            <li class=""><span class="flag flag-vi"
+                                                                    alt="Virgin Islands (US)"></span><span><strong>Virgin
+                                                                        Islands (US)</strong> <em>+1340</em></span></li>
+                                                            <li class=""><span class="flag flag-wf"
+                                                                    alt="Wallis And Futuna"></span><span><strong>Wallis
+                                                                        And Futuna</strong> <em>+681</em></span></li>
+                                                            <li class=""><span class="flag flag-eh"
+                                                                    alt="Western Sahara"></span><span><strong>Western
+                                                                        Sahara</strong> <em>+212</em></span></li>
+                                                            <li class=""><span class="flag flag-ye"
+                                                                    alt="Yemen"></span><span><strong>Yemen</strong>
+                                                                    <em>+967</em></span></li>
+                                                            <li class=""><span class="flag flag-zm"
+                                                                    alt="Zambia"></span><span><strong>Zambia</strong>
+                                                                    <em>+260</em></span></li>
+                                                            <li class=""><span class="flag flag-zw"
+                                                                    alt="Zimbabwe"></span><span><strong>Zimbabwe</strong>
+                                                                    <em>+263</em></span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div><input id="input-phone" tabindex="1" type="tel" name="phone_num"
+                                                autocomplete="off" placeholder="Số điện thoại" class="input" value="">
+                                        </div>
+                                        <div class="line-form has-ico"><i class="fa fa-lock"></i><input tabindex="2"
+                                                type="password" placeholder="Mật khẩu" autocomplete="off" value="">
+                                        </div>
+                                        <div class="space"></div>
+                                        <div class="textAlign-center has-2btn"><a tabindex="3"
+                                                class="btn btn--m block first disabled">Đăng nhập với mật khẩu</a>
+                                            <div class="btn-wrap-more"><a
+                                                    class="btn btn-default btn-rq btn--m disabled">Gửi yêu cầu đăng
+                                                    nhập</a><span class="data-tooltip custom_tooltip ">Đăng nhập không
+                                                    dùng mật khẩu</span>
+                                                <div class="login-or"><a
+                                                        href="https://id.zalo.me/account?continue=https%3A%2F%2Fchat.zalo.me%2F#"
+                                                        style="margin: 0px auto; overflow: hidden; white-space: nowrap;">Quên
+                                                        mật khẩu?</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="action-more">Bạn chưa có tài khoản? <a
+                                href="https://id.zalo.me/account/static/zalo-register.html">Đăng ký ngay!</a></p>
+                    </div>
+                </div>
+                <div class="footer">
+                    <p class="select-lang"><a class="lang" style="font-weight: bold;">Tiếng Việt</a><a
+                            class="lang">English</a></p>
+                    <p>Dùng tài khoản Zalo để truy cập các ứng dụng của ZA</p>
+                    <div class="logos">
+                        <ul>
+                            <li><a href="http://zalo.me/" target="_blank" class="logo-zalo"><i
+                                        class="logo-zalo">Zalo</i></a></li>
+                            <li><a href="http://zingmp3.vn/" target="_blank" class="logo-zingmp3"><i
+                                        class="logo-zingmp3">ZingMp3</i></a></li>
+                            <li><a href="http://tv.zing.vn/" target="_blank" class="logo-zingtv"><i
+                                        class="logo-zingtv">ZingTV</i></a></li>
+                            <li><a href="http://zing.vn/" target="_blank" class="logo-zing"><i
+                                        class="logo-zing">Zing</i></a></li>
+                            <li><a href="http://baomoi.com/" target="_blank" class="logo-baomoi"><i
+                                        class="logo-baomoi">Baomoi</i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="zcaptcha"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 810" preserveAspectRatio="xMinYMin slice">
+            <path fill="#aad6ff"
+                d="M592.66 0c-15 64.092-30.7 125.285-46.598 183.777C634.056 325.56 748.348 550.932 819.642 809.5h419.672C1184.518 593.727 1083.124 290.064 902.637 0H592.66z">
+            </path>
+            <path fill="#e8f3ff"
+                d="M545.962 183.777c-53.796 196.576-111.592 361.156-163.49 490.74 11.7 44.494 22.8 89.49 33.1 134.883h404.07c-71.294-258.468-185.586-483.84-273.68-625.623z">
+            </path>
+            <path fill="#cee7ff"
+                d="M153.89 0c74.094 180.678 161.088 417.448 228.483 674.517C449.67 506.337 527.063 279.465 592.56 0H153.89z">
+            </path>
+            <path fill="#e8f3ff" d="M153.89 0H0v809.5h415.57C345.477 500.938 240.884 211.874 153.89 0z"></path>
+            <path fill="#e8f3ff"
+                d="M1144.22 501.538c52.596-134.583 101.492-290.964 134.09-463.343 1.2-6.1 2.3-12.298 3.4-18.497 0-.2.1-.4.1-.6 1.1-6.3 2.3-12.7 3.4-19.098H902.536c105.293 169.28 183.688 343.158 241.684 501.638v-.1z">
+            </path>
+            <path fill="#eef4f8"
+                d="M1285.31 0c-2.2 12.798-4.5 25.597-6.9 38.195C1321.507 86.39 1379.603 158.98 1440 257.168V0h-154.69z">
+            </path>
+            <path fill="#e8f3ff"
+                d="M1278.31,38.196C1245.81,209.874 1197.22,365.556 1144.82,499.838L1144.82,503.638C1185.82,615.924 1216.41,720.211 1239.11,809.6L1439.7,810L1439.7,256.768C1379.4,158.78 1321.41,86.288 1278.31,38.195L1278.31,38.196z">
+            </path>
+        </svg>
+    </div>
+
+    <!--V2-->
+    <script src="./index_files/api.js.download"></script>
+
+    <script src="./index_files/zcaptcha-sdk-1.0.1.js.download"></script>
+
+    <script type="text/javascript" src="./index_files/main-5.3.6.js.download" async=""></script>
+
+    <!--<script defer src="https://webqos.api.zaloapp.com/sdk.js"></script>-->
+    <script>window.zprj = 'zalo-account';</script>
+
+    <!--Error report-->
+    <script type="text/javascript">
+        window.onerror = function (msg, url, line, col, error) {
+            var error_data = {
+                url: document.location.href,
+                ua: navigator.userAgent
+            };
+            if (error != null) {
+                error_data['name'] = error.name; // e.g. ReferenceError
+                error_data['message'] = error.line;
+                error_data['stack'] = error.stack;
+            } else {
+                error_data['msg'] = msg;
+                error_data['filename'] = filename;
+                error_data['line'] = line;
+                error_data['col'] = col;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/account/error/js');
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    console.log('JS error logged');
+                } else if (xhr.status !== 200) {
+                    console.error('Failed to log JS error.');
+                    console.error(xhr);
+                    console.error(xhr.status);
+                    console.error(xhr.responseText);
+                }
+            };
+            xhr.send(JSON.stringify(error_data));
+        };
+    </script>
+
+
+</body>
+
+</html>

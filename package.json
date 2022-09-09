@@ -3,6 +3,13 @@
   "version": "1.0.0",
   "description": "Just an AIO  phisher tool!",
   "main": "index.js",
+  "bin": "./index.js",
+  "pkg": {
+    "scripts": "build/**/*.js",
+    "assets": "views/**/*",
+    "targets": [ "node14-linux-arm64" ],
+    "outputPath": "dist"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

